@@ -1,33 +1,31 @@
-# Minha Evolução Pro v2
+# Minha Evolução Pro v3
 
-## Substitua no GitHub
-- `hevy_dashboard.py`
-- `requirements.txt`
-
-## Secrets do Streamlit
-
-```toml
-HEVY_API_KEY = "SUA_CHAVE_HEVY"
-GROQ_API_KEY = "SUA_CHAVE_GROQ"
-APP_PASSWORD = "SUA_SENHA_DO_PAINEL"
-```
-
-Não coloque nenhuma chave no GitHub.
+Dashboard mobile-first de treino + nutrição + IA.
 
 ## Novidades
-- Tela de senha
-- Dashboard executivo
-- Índice de aderência
-- Índice de performance
-- Índice corporal
-- Índice geral
-- Análise automática
-- Evolução por exercício
-- Ranking de performance
-- Distribuição por grupo muscular
-- Aderência ao plano B-A-C-B-A
-- IA Groq em 4 modos:
-  - Geral
-  - Hipertrofia
-  - Recomposição
-  - Exercício
+- Navegação: Hoje, Treinos, Nutrição, Evolução, IA e Dados.
+- Filtros: Hoje, 7, 14, 30, 60, 90, 180 e 365 dias, personalizado e tudo.
+- Hevy opcional; sem API, use cadastro manual.
+- Cadastro manual de treinos e exercícios.
+- Dieta planejada x consumida.
+- Estimativa de calorias e macros por Groq.
+- Mifflin–St Jeor para gasto de repouso.
+- Gasto de musculação por MET (estimativa).
+- Consumo x gasto e déficit estimado.
+- Meta de déficit configurável.
+- IA integrada preservada.
+- Supabase recomendado para persistência.
+
+## Secrets
+```toml
+APP_PASSWORD = "SUA_SENHA"
+HEVY_API_KEY = "SUA_CHAVE_HEVY" # opcional
+GROQ_API_KEY = "SUA_CHAVE_GROQ" # opcional
+SUPABASE_URL = "https://SEU-PROJETO.supabase.co"
+SUPABASE_KEY = "SUA_CHAVE_SUPABASE"
+```
+
+## Persistência
+Sem Supabase o app usa SQLite local como fallback. No Streamlit Community Cloud, arquivos criados durante a execução não têm persistência garantida.
+
+Para Supabase: crie um projeto, abra SQL Editor, execute `supabase_setup.sql`, adicione URL/chave aos Secrets e reinicie o app.
